@@ -15,8 +15,8 @@ pipeline{
         }
 
         stage ('run static and dynamic analays'){
-            enviroment{
-                FOR_SEQUENTIAL = true
+           environment {
+                FOR_SEQUENTIAL = "some-value"
             }
             stages{
                 stage('copy paste detector'){
