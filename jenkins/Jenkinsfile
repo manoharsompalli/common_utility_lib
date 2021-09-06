@@ -1,0 +1,52 @@
+pipeline{
+    agent any 
+    stage('clean enviroment'){
+        steps{
+            echo 'stage for cleaning  build env'
+        }
+    }
+
+    stage('bulid image for CI testing'){
+        steps{
+            echo 'stage for build image for testing in CI pipeline'
+        }
+
+    }
+
+    stage ('run static and dynamic analays'){
+        enviroment{
+            FOR_SEQUENTIAL = true
+        }
+        stages{
+            stage('copy paste detector'){
+                steps{
+                    echo 'copy paste detector is yet to be configured'
+                }
+            }
+            stage('pylint tests'){
+                steps{
+                    echo 'pylint is yet to be configured'
+                }
+            }
+            stage('mypy tests'){
+                steps{
+                    echo 'mypy is yet to be configured'
+                }
+            }
+
+            stage('unit tests'){
+                steps{
+                    echo 'no unit tets to run at the momment'
+                }
+            }
+
+            stage('code coverage tests'){
+                steps{
+                    echo 'code coverge tests not configured yet'
+                }
+            }
+        }
+    }
+
+
+}
